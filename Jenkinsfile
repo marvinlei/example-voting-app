@@ -6,7 +6,7 @@ pipeline {
   stages{
       stage('Build'){
           agent{
-            any{
+            docker{
               image 'python:2.7.16-slim'
               args '--user root'
             }
@@ -21,7 +21,7 @@ pipeline {
       }
       stage('Unit Test'){
           agent{
-            any{
+            docker{
               image 'python:2.7.16-slim'
               args '--user root'
             }
